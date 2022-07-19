@@ -1,10 +1,28 @@
 {% extends "base.html" %}
 {% block content %}
-<div class = 'container'>
-    <form  action = "." method = "POST" enctype = 'multipart/form-data'> {% csrf_token%}
-        {{ form.as_p }}
-        <input type = "submit" value = "Save"/>
-        </form>
-</div>
-<h1>{{ status }}</h1>
+{% load static %}
+
+
+    <div class ='row'>
+        <div class ='col'>
+            <img src="{% static 'images/images/AI2.jpg'%}" alt="AI Image">
+        </div>
+        <div class ='col pt-5 mt-5'>
+            <H5> Medicine with AI</H5>
+            <h1 class="display-1" >PneumonAI</h1>
+            <h2 class="text-muted">Identify pneumonia cases in the blink of an eye. Just upload the x-ray image below.</h2>
+            <div class= 'container pt-4 p-0'>
+            <form  action = "." method = "POST" enctype = 'multipart/form-data'> {% csrf_token%}
+                {{ form.as_p }}
+                <input class ='btn btn-primary btn-lg btn-block'type = "submit" value = "Diagnose"/>
+                
+            
+        </div>
+        </div>
+        </div>
+    </div>
+
+
+
 {% endblock content %}
+

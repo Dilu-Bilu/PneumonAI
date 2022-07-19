@@ -11,6 +11,7 @@ from keras.utils import np_utils
 from PIL import Image
 from django.core.files.storage import default_storage
 from io import BytesIO
+from django.contrib import messages
 
 # Create your views here.
 class AIClassificationView(View):
@@ -43,8 +44,10 @@ class AIClassificationView(View):
             result = classifier.predict(test_image)
             if result[0][0] == 1:
                 status = 'Pneumonia Detected'
+                messages.warning(self.request, "This Patient Has Pneumonia | Treatment is advised")
             else:
                 status = 'No Pneumonia Detected'
+                messages.success(self.request, "Everything is alright!")
             #Save data to django model
             context = {
                 "form": form,
