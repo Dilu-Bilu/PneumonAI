@@ -7,7 +7,7 @@ from django.views.generic import TemplateView
 from AI.views import AIClassificationView
 
 urlpatterns = [
-    path('', AIClassificationView.as_view(), name='home'),
+    path('/', AIClassificationView.as_view(), name='home'),
     path(
         "about/", TemplateView.as_view(template_name="pages/about.html"), name="about"
     ),
