@@ -70,7 +70,7 @@ DJANGO_APPS = [
     # "django.contrib.humanize", # Handy template tags
     "django.contrib.admin",
     "django.forms",
-    "whitenoise.runserver_nostatic",
+    # "whitenoise.runserver_nostatic",
 ]
 THIRD_PARTY_APPS = [
     "crispy_forms",
